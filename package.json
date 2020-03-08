@@ -1,0 +1,40 @@
+{
+  "name": "rxh",
+  "version": "1.0.0",
+  "description": "rxjs hook for react",
+  "module": "./lib/es5/index.js",
+  "main": "./lib/cjs/index.js",
+  "typings": "./lib/cjs/index.d.ts",
+  "repository": "https://github.com/iamcco/rxh.git",
+  "author": "iamcco <ooiss@qq.com>",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
+  },
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "rm -rf lib && tsc -p ./tsconfig.es5.json",
+    "build:cjs": "rm -rf lib && tsc -p ./tsconfig.cjs.json",
+    "lint": "eslint --fix ./src --ext .ts"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "husky": "^4.2.3",
+    "prettier": "^1.19.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "rxjs": "^6.5.4",
+    "typescript": "^3.8.3"
+  }
+}
